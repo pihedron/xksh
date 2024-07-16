@@ -1,4 +1,4 @@
-# XKSH
+# xksh
 
 XKSH is an alternative Windows shell that provides bash commands linux users are familiar with like `ls`.
 
