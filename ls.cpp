@@ -13,7 +13,15 @@ int main(int argc, char **argv)
   string path = string(buf);
   for (const auto &entry : fs::directory_iterator(path))
   {
-    cout << entry.path().u8string().substr(path.size() + 1);
+    string relativePath = entry.path().u8string().substr(path.size());
+    if (relativePath[0] == '\\')
+    {
+      cout << relativePath.substr(1);
+    }
+    else
+    {
+      cout << relativePath;
+    }
     if (entry.is_directory())
     {
       cout << "/";
